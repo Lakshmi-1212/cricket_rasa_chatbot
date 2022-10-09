@@ -1,0 +1,48 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: recent_matches
+  examples: |
+    - Get me the current matches
+    - What are the ongoing matches?
+    - Show the status of the recent matches
+    - Show the current news in cricket
+    - what's happening in the cricket world
+    - Show the current matches
+- intent: upcoming_matches
+  examples: |
+    - Show me the upcoming matches for [India](team)
+    - What are the next matches for [Karnataka](team)?
+    - Show what's next for [South Africa](team)?
+    - Show all the upcoming matches
+    - What's next in cricket
+    - show the upcoming matches for [England](team)
+    - Where is [Australia](team) playing next?
+    - show the upcoming matches for [India](team)
+    - show the upcoming matches

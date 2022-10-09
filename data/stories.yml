@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+
+- story: view recent matches
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recent_matches
+  - action: action_get_recent_matches
+  - action: utter_restart
+
+- story: upcoming matches - with team name
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: upcoming_matches
+    entities:
+    - team: India
+  - slot_was_set:
+    - team: India
+  - action: action_get_upcoming_matches
+  - slot_was_set:
+    - team: null
+  - action: utter_restart
+
+- story: upcoming matches - without team name
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: upcoming_matches
+  - action: action_get_upcoming_matches
+  - slot_was_set:
+    - team: null
+  - action: utter_restart

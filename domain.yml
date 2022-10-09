@@ -1,0 +1,33 @@
+version: '3.1'
+intents:
+- goodbye
+- greet
+- recent_matches
+- upcoming_matches
+entities:
+- team
+slots:
+  team:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: team
+responses:
+  utter_greet:
+  - text: Hey there! I am your cricket chatbot, how can I help you?
+  utter_goodbye:
+  - text: Bye
+  - text: Nice chatting with you!! Bye bye!!
+  - text: See ya!!
+  utter_restart:
+  - text: Is there anything else that I can help you with?
+  - text: Do you have any other query?
+actions:
+- action_get_recent_matches
+- action_get_upcoming_matches
+- utter_greet
+- utter_restart
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
